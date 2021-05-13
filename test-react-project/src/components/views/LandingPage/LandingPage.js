@@ -10,7 +10,11 @@ function LandingPage(props) {
 	const responseList = require('./response')
 
 	const headers = {
+<<<<<<< HEAD
 		"Access-Control-Allow-Origin": "http://www.safe182.go.kr/api/lcm/findChildList.do",
+=======
+		"Access-Control-Allow-Origin": "*",
+>>>>>>> front-test
 		};
 	
 	useEffect(() => {
@@ -45,9 +49,17 @@ headers: headers
 				{responseList.default.map((data) => <ListItem key={data.msspsnIdntfccd} data={data} />)}
 			</div>
 		</div>
+<<<<<<< HEAD
 	
 		
 	);
+=======
+	
+		
+	);
+	
+	
+>>>>>>> front-test
 }
 
 export default LandingPage;
