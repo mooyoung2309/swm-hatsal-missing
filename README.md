@@ -23,7 +23,7 @@
 
 ## 🥚 기획 계기
 
-![1](https://i.ibb.co/9w6KCKG/1.png)
+![1](https://i.ibb.co/dLVsVzV/1.png)
 
 우리나라의 실종 아동 문제는 해결되지 않고 있으며, 연간 2만명의 아동들에 대한 실종 접수가 들어오고 있습니다.
 
@@ -39,7 +39,7 @@
 
 ## 🙆‍♂️  실종 아동 전단지 서비스
 
-![2](https://i.ibb.co/jkTjHHf/2.png)
+![2](https://i.ibb.co/hZwtPFT/2.png)
 
 그럼 이제 기존 경찰청 사이트보다 더욱 강력하고 편리한 기능을 제공하는 저희 서비스를 소개하겠습니다!
 
@@ -47,7 +47,7 @@
 
 - #### 🏃 기존보다 빠른 조회
 
-![3](https://i.ibb.co/rtF5h50/3.png)
+![3](https://i.ibb.co/P1RDtWG/3.png)
 
 첫번째로는 버튼을 클릭해서 다음으로 넘어가는 경찰청 사이트와 비교해서, 
 
@@ -59,7 +59,7 @@
 
 - #### 📌 실종자 정보 수정 기능
 
-![4](https://i.ibb.co/8jnTDKS/4.png)
+![4](https://i.ibb.co/k1MM1WJ/4.png)
 
 두번째로는 자유로운 정보 수정이 가능합니다.
 
@@ -71,7 +71,7 @@
 
 - #### 📑 실종자 덧글 제보 기능
 
-![5](https://i.ibb.co/YDbKXvg/5.png)
+![5](https://i.ibb.co/Jv5zXWH/5.png)
 
 세번쨰로는 실낱같은 희망인 댓글 제보가 가능합니다.
 
@@ -83,7 +83,7 @@
 
 - #### 👓전단지 미리보기 서비스
 
-![6](https://i.ibb.co/TYJHdcf/6.png)
+![6](https://i.ibb.co/2Wd7WFT/6.png)
 
 마지막으로 미리보기 서비스 제공입니다.
 
