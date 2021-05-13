@@ -11,7 +11,10 @@ import java.util.List;
 public class MissingPerson {
     @Id
     private String id;
-    private String food;
-    private String etc;
+
+    // 추가적인 정보
+    private String info;
+
+    // 댓글
     private List<String> comment;
 }
