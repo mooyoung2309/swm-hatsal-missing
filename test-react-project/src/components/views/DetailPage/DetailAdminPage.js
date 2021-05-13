@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Image, Typography, Space, Input, Button, List } from 'antd';
-import { Helmet } from 'react-helmet';
-import ReportPage from './Section/ReportPage';
+import { Row, Col, Image, Typography, Space, Input, Button, List, Upload } from 'antd';
+import EditPage from './Section/EditPage';
 import axios from 'axios';
 
 const { Text } = Typography;
 const { TextArea } = Input;
 
-function DetailPage({match}) {
+function DetailAdminPage({match}) {
 	const { msspsnIdntfccd } = match.params;
 	const [data, setData] = useState({});
 	const [mongoData, setMongoData] = useState({});
-	const [commentData, setCommentData] = useState("");
-	
+	const [infoData, setInfoData] = useState("");
 	const tmp = require('.././LandingPage/response');
 	const responseList = tmp.default; 
 	
@@ -23,41 +21,13 @@ function DetailPage({match}) {
 		{id: "테스트용 댓글 4"},
 		{id: "테스트용 댓글 5"},
 		{id: "테스트용 댓글 6"},
-	];
+	]
+		
 	
-	const findDataById = (id) => {
-		for (var i=0; i<responseList.length; i++) {
-			console.log(responseList[i]['msspsnIdntfccd']);
-			if (String(responseList[i]['msspsnIdntfccd']) === String(msspsnIdntfccd)) {
-				console.log("msspsnIdntfccd 일치 찾음"+i);
-				setData(responseList[i]);
-				break;
-			}
-		}
-	}
 	
-	const onChangeHandlerTextArea = (comment) => {
-		setCommentData(comment);
-	}
-	
-	const onClickHandlerButton = () => {
-		console.log(commentData);
-		const url = 'http://swm-hatsal-missing-server.run.goorm.io/missingPeople'
-		// axios.post(url, {
-		// 	id : msspsnIdntfccd,
-		// 	comment: commentData
-		//   })
-		//   .then(function (response) {
-		// 	console.log(response);
-		//   })
-		//   .catch(function (error) {
-		// 	console.log(error);
-		//   });
-	}
-
 	useEffect(() => {
-        // json에서 find
-        findDataById(msspsnIdntfccd)
+        // url -> id
+        findDataById(msspsnIdntfccd);
 		const url = 'http://swm-hatsal-missing-server.run.goorm.io/tmp'
 		axios.get(url, {
 			id : msspsnIdntfccd
@@ -72,14 +42,37 @@ function DetailPage({match}) {
 		  });
     }, [])
 	
+	const findDataById = (id) => {
+		for (var i=0; i<responseList.length; i++) {
+			console.log(responseList[i]['msspsnIdntfccd']);
+			if (String(responseList[i]['msspsnIdntfccd']) === String(msspsnIdntfccd)) {
+				console.log("msspsnIdntfccd 일치 찾음"+i);
+				setData(responseList[i]);
+				break;
+			}
+		}
+	}
+	
+	const onChangeHandlerTextArea = (info) => {
+		setInfoData(info);
+	}
+
+	const onClickHandlerButton = () => {
+		console.log(infoData);
+		const url = 'http://swm-hatsal-missing-server.run.goorm.io/missingPeople'
+		axios.post(url, {
+			info: infoData
+		  })
+		  .then(function (response) {
+			console.log(response);
+		  })
+		  .catch(function (error) {
+			console.log(error);
+		  });
+	}
+	
     return (
 		<>
-			<Helmet>
-			  	<title>{`${data.nm} / ${data.sexdstnDscd} / ${data.ageNow} / ${data.occrde}`}</title>
-			  	<meta charSet="utf-8" />
-			  	<meta name="description" property="og:description" content={`${data.occrAdres}`} />
-				<meta name="image" property="og:image" content={`http://www.safe182.go.kr/api/lcm/imgView.do?msspsnIdntfccd=${data.msspsnIdntfccd }`} />
-   			</Helmet>
 			<Row>
 				{/* 이미지 */}
 				<Col span={8} />
@@ -87,7 +80,7 @@ function DetailPage({match}) {
 					<Image
 						  style={{display: 'inline-block' }}
 						  width={200}
-						  src={(data.tknphotoFile==null)?'https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914_960_720.png':`http://www.safe182.go.kr/api/lcm/imgView.do?msspsnIdntfccd=${data.msspsnIdntfccd }`}
+						  src={`http://www.safe182.go.kr/api/lcm/imgView.do?msspsnIdntfccd=${data.msspsnIdntfccd}`}
 					/>
 				</Col>
 				<Col span={8}/>
@@ -108,6 +101,7 @@ function DetailPage({match}) {
 					</Space>
 				</Col>
 				<Col span={8} />
+		
 			</Row>
 			<Row style={{ marginTop: '1rem' }}>
 				{/* 댓글 */}
@@ -132,7 +126,6 @@ function DetailPage({match}) {
 				<Col span={8} />
 
 			</Row>
-			
 			<Row style={{ marginTop: '1rem' }}>
 				{/* 제보하기 */}
 				<Col span={8} />
@@ -144,7 +137,7 @@ function DetailPage({match}) {
 						style={{ marginTop: '1rem' }} 
 						type="primary" block
 						onClick={(e) => onClickHandlerButton()}>
-					  제보하기
+					  추가하기
 					</Button>
 				</Col>
 				<Col span={8}/>
@@ -154,4 +147,4 @@ function DetailPage({match}) {
     )
 }
 
-export default DetailPage
+export default DetailAdminPage

@@ -1,0 +1,31 @@
+.Home {
+	width: 80rem;
+	margin-left:auto;
+	margin-right:auto;
+	.Title {
+		display: flex;
+		border-radius: 5px;
+		background: rgb(43,136,255);
+		color:white;
+		font-family: 'KOTRA_BOLD-Bold';
+		font-size:2.5rem;
+		height:5.2rem;
+		align-items:center;
+		justify-content:center;
+		margin-bottom:2rem;
+		margin-left:8px;
+		margin-right:8px;
+	}
+	.List {
+		display:flex;
+		flex-wrap:wrap;
+		
+	}
+}
+
+@font-face {
+    font-family: 'KOTRA_BOLD-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
