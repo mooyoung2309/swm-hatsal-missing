@@ -24,6 +24,7 @@ public class MissingPersonJpaController {
 
         if (missingPerson.isEmpty()) {
             // 없는 경우 front에 없다고 보내기
+            return null;
         }
 
         // 있는 경우 정보 보내기
@@ -50,5 +51,4 @@ public class MissingPersonJpaController {
         MissingPerson saveMissingPerson = missingPersonMongoDBRepository.save(missingPerson);
         return saveMissingPerson;
     }
-
 }
