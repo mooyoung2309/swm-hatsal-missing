@@ -1,5 +1,5 @@
 <h4 align="center">
-  ![title](https://ibb.co/YRM2ssF)
+  ![title](https://i.ibb.co/2nQq441/4308569-DU5.png)
   > 실종 아동 웹 전단지 서비스
 </h4>
 
