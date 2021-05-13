@@ -55,10 +55,15 @@ public class MissingPersonJpaController {
 
     }
 
-    @GetMapping("/missingPeople/{id}/info")
-    public MissingPerson MissingPersonAddInfo(@PathVariable String id) {
-        Optional<MissingPerson> missingPerson = missingPersonMongoDBRepository.findById(id);
-
+    @PostMapping("/missingPeople/{id}/info")
+    public MissingPerson MissingPersonAddInfo(@PathVariable String id, @RequestBody MissingPersonInfo missingPersonInfo) {
+        Optional<MissingPerson> missingPerson = missingPersonMongoDBRepository.findById(id);//id 찾고
+        if(missingPerson.get().getInfo().isEmpty()) {
+        	MissingPerson saveInfo = missingPersonMongoDBRepository.save(missingPersonInfo);
+        	return saveInfo;
+        }
+        missingPerson.get().setInfo(missingPersonInfo.getInfo());//id찾은 것의 객체에 받아온 info정보 넣어주기
+        MissingPerson saveMissingPerson = missingPersonMongoDBRepository.save(missingPerson);//id찾은 객체를 저장
         return missingPerson.get();
     }
 

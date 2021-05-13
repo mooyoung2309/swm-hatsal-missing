@@ -49,3 +49,10 @@ node_modules
 
 ### application.yml ###
 /missing-server/missing-server/src/main/resources/application.yml
+
+### projectSetting ###
+/missing-server/.gradle/
+/missing-server/.project
+/missing-server/.settings/
+/missing-server/.DS_Store
+.DS_Store
