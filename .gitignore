@@ -1,0 +1,45 @@
+### Client ###
+node_modules
+/test-react-project/node_modules
+
+### API Config ###
+/test-react-project/.env
+
+### Server ###
+/missing-server/missing-server/HELP.md
+/missing-server/missing-server/.gradle
+/missing-server/missing-server/build/
+/missing-server/missing-server/!gradle/wrapper/gradle-wrapper.jar
+/missing-server/missing-server/!**/src/main/**/build/
+/missing-server/missing-server/!**/src/test/**/build/
+
+### STS ###
+/missing-server/missing-server/.apt_generated
+/missing-server/missing-server/.classpath
+/missing-server/missing-server/.factorypath
+/missing-server/missing-server/.project
+/missing-server/missing-server/.settings
+/missing-server/missing-server/.springBeans
+/missing-server/missing-server/.sts4-cache
+/missing-server/missing-server/bin/
+/missing-server/missing-server/!**/src/main/**/bin/
+/missing-server/missing-server/!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+/missing-server/missing-server/.idea
+/missing-server/missing-server/*.iws
+/missing-server/missing-server/*.iml
+/missing-server/missing-server/*.ipr
+/missing-server/missing-server/out/
+/missing-server/missing-server/!**/src/main/**/out/
+/missing-server/missing-server/!**/src/test/**/out/
+
+### NetBeans ###
+/missing-server/missing-server/nbproject/private/
+/missing-server/missing-server/nbbuild/
+/missing-server/missing-server/dist/
+/missing-server/missing-server/nbdist/
+/missing-server/missing-server/.nb-gradle/
+
+### VS Code ###
+.vscode/
