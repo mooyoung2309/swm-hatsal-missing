@@ -3,7 +3,6 @@ package swm.hatsal.missingserver.MissingPerson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.*;
 
 @RestController
@@ -40,8 +39,7 @@ public class MissingPersonJpaController {
             newMissingPerson.setId(id);
             newMissingPerson.setInfo(null);
             newMissingPerson.setComment(List.of(missingPersonComment.getComment()));
-            MissingPerson savedMissingPerson = missingPersonMongoDBRepository.save(newMissingPerson);
-            return savedMissingPerson;
+            return missingPersonMongoDBRepository.save(newMissingPerson);
         }else{
             List<String> commentList = missingPerson.get().getComment();
             if(commentList == null){
@@ -49,8 +47,7 @@ public class MissingPersonJpaController {
             }
             commentList.add(missingPersonComment.getComment());
             missingPerson.get().setComment(commentList);
-            MissingPerson saveMissingPerson = missingPersonMongoDBRepository.save(missingPerson.get());
-            return saveMissingPerson;
+            return missingPersonMongoDBRepository.save(missingPerson.get());
         }
 
     }
@@ -58,19 +55,21 @@ public class MissingPersonJpaController {
     @PostMapping("/missingPeople/{id}/info")
     public MissingPerson MissingPersonAddInfo(@PathVariable String id, @RequestBody MissingPersonInfo missingPersonInfo) {
         Optional<MissingPerson> missingPerson = missingPersonMongoDBRepository.findById(id);//id 찾고
-        if(missingPerson.get().getInfo().isEmpty()) {
-        	MissingPerson saveInfo = missingPersonMongoDBRepository.save(missingPersonInfo);
-        	return saveInfo;
+        // database에 없으면
+        if (missingPerson.isEmpty()) {
+            MissingPerson newMissingPerson = new MissingPerson();
+            newMissingPerson.setId(id);
+            newMissingPerson.setInfo(missingPersonInfo.getInfo());
+            newMissingPerson.setComment(null);
+            return missingPersonMongoDBRepository.save(newMissingPerson);
         }
         missingPerson.get().setInfo(missingPersonInfo.getInfo());//id찾은 것의 객체에 받아온 info정보 넣어주기
-        MissingPerson saveMissingPerson = missingPersonMongoDBRepository.save(missingPerson);//id찾은 객체를 저장
-        return missingPerson.get();
+        return  missingPersonMongoDBRepository.save(missingPerson.get());//id찾은 객체를 저장
     }
 
     // dummy data
     @PostMapping("/missingPeople")
     public MissingPerson createMissingPerson(@RequestBody MissingPerson missingPerson) {
-        MissingPerson saveMissingPerson = missingPersonMongoDBRepository.save(missingPerson);
-        return saveMissingPerson;
+        return missingPersonMongoDBRepository.save(missingPerson);
     }
 }
