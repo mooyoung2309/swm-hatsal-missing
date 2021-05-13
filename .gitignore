@@ -43,3 +43,9 @@ node_modules
 
 ### VS Code ###
 .vscode/
+
+###intellij###
+/missing-server/.idea/
+
+### application.yml ###
+/missing-server/missing-server/src/main/resources/application.yml
