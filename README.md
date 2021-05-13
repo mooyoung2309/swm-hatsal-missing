@@ -59,6 +59,15 @@
 
 ## 💻 설계
 
+- #### 개발환경
+
+<img width="658" alt="개발환경" src="https://user-images.githubusercontent.com/52316270/118183795-7e6a4880-b475-11eb-9ce8-9e158c602f53.png">
+
+
+- #### 시스템 구성도
+
+<img width="825" alt="시스템구성도" src="https://user-images.githubusercontent.com/52316270/118183368-fbe18900-b474-11eb-9b18-195068121068.png">
+
 <br />
 
 ## ☕ 개발 역할
