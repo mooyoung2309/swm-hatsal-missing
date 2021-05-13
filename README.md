@@ -23,29 +23,37 @@
 
 ## 🥚 기획 계기
 
+![1](https://i.ibb.co/9w6KCKG/1.png)
+
 <br />
 
 ## 🙆‍♂️  실종 아동 전단지 서비스
 
+![2](https://i.ibb.co/jkTjHHf/2.png)
+
 <br />
 
 - #### 🏃 기존보다 빠른 조회
+- 
+![3](https://i.ibb.co/rtF5h50/3.png)
 
 <br />
 
 - #### 📌 실종자 정보 수정 기능
 
-<br />
-
-- #### 📑 실종자 덧글 제보 기능
+![4](https://i.ibb.co/8jnTDKS/4.png)
 
 <br />
 
 - #### 📑 실종자 덧글 제보 기능
+
+![5](https://i.ibb.co/YDbKXvg/5.png)
 
 <br />
 
 - #### 👓전단지 미리보기 서비스
+
+![6](https://i.ibb.co/TYJHdcf/6.png)
 
 <br />
 
